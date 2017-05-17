@@ -1,4 +1,4 @@
-package com.xiami.spring.mvc;
+package com.xiami.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
