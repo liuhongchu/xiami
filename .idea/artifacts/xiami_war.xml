@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="xiami:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="xiami.war">
+      <element id="artifact" artifact-name="xiami:war exploded" />
+    </root>
+  </artifact>
+</component>
