@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiami.mapper.UserInfoMapper">
+  <resultMap id="BaseResultMap" type="com.xiami.po.UserInfo">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="ip_address" jdbcType="VARCHAR" property="ipAddress" />
+    <result column="edition_number" jdbcType="VARCHAR" property="editionNumber" />
+    <result column="token" jdbcType="VARCHAR" property="token" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="lose_time" jdbcType="TIMESTAMP" property="loseTime" />
+    <result column="insert_time" jdbcType="TIMESTAMP" property="insertTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="deleted" jdbcType="INTEGER" property="deleted" />
+    <result column="param1" jdbcType="VARCHAR" property="param1" />
+    <result column="param2" jdbcType="VARCHAR" property="param2" />
+    <result column="param3" jdbcType="VARCHAR" property="param3" />
+    <result column="param4" jdbcType="VARCHAR" property="param4" />
+    <result column="param5" jdbcType="VARCHAR" property="param5" />
+    <result column="unionid" jdbcType="VARCHAR" property="unionid" />
+    <result column="alipay_user_id" jdbcType="VARCHAR" property="alipayUserId" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, ip_address, edition_number, token, user_id, lose_time, insert_time, update_time, 
+    deleted, param1, param2, param3, param4, param5, unionid, alipay_user_id, type
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tb_user_info
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from tb_user_info
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.xiami.po.UserInfo">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into tb_user_info (ip_address, edition_number, token, 
+      user_id, lose_time, insert_time, 
+      update_time, deleted, param1, 
+      param2, param3, param4, 
+      param5, unionid, alipay_user_id, 
+      type)
+    values (#{ipAddress,jdbcType=VARCHAR}, #{editionNumber,jdbcType=VARCHAR}, #{token,jdbcType=VARCHAR}, 
+      #{userId,jdbcType=INTEGER}, #{loseTime,jdbcType=TIMESTAMP}, #{insertTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{deleted,jdbcType=INTEGER}, #{param1,jdbcType=VARCHAR}, 
+      #{param2,jdbcType=VARCHAR}, #{param3,jdbcType=VARCHAR}, #{param4,jdbcType=VARCHAR}, 
+      #{param5,jdbcType=VARCHAR}, #{unionid,jdbcType=VARCHAR}, #{alipayUserId,jdbcType=VARCHAR}, 
+      #{type,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiami.po.UserInfo">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into tb_user_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="ipAddress != null">
+        ip_address,
+      </if>
+      <if test="editionNumber != null">
+        edition_number,
+      </if>
+      <if test="token != null">
+        token,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="loseTime != null">
+        lose_time,
+      </if>
+      <if test="insertTime != null">
+        insert_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="deleted != null">
+        deleted,
+      </if>
+      <if test="param1 != null">
+        param1,
+      </if>
+      <if test="param2 != null">
+        param2,
+      </if>
+      <if test="param3 != null">
+        param3,
+      </if>
+      <if test="param4 != null">
+        param4,
+      </if>
+      <if test="param5 != null">
+        param5,
+      </if>
+      <if test="unionid != null">
+        unionid,
+      </if>
+      <if test="alipayUserId != null">
+        alipay_user_id,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="ipAddress != null">
+        #{ipAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="editionNumber != null">
+        #{editionNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="token != null">
+        #{token,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="loseTime != null">
+        #{loseTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="insertTime != null">
+        #{insertTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deleted != null">
+        #{deleted,jdbcType=INTEGER},
+      </if>
+      <if test="param1 != null">
+        #{param1,jdbcType=VARCHAR},
+      </if>
+      <if test="param2 != null">
+        #{param2,jdbcType=VARCHAR},
+      </if>
+      <if test="param3 != null">
+        #{param3,jdbcType=VARCHAR},
+      </if>
+      <if test="param4 != null">
+        #{param4,jdbcType=VARCHAR},
+      </if>
+      <if test="param5 != null">
+        #{param5,jdbcType=VARCHAR},
+      </if>
+      <if test="unionid != null">
+        #{unionid,jdbcType=VARCHAR},
+      </if>
+      <if test="alipayUserId != null">
+        #{alipayUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiami.po.UserInfo">
+    update tb_user_info
+    <set>
+      <if test="ipAddress != null">
+        ip_address = #{ipAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="editionNumber != null">
+        edition_number = #{editionNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="token != null">
+        token = #{token,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="loseTime != null">
+        lose_time = #{loseTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="insertTime != null">
+        insert_time = #{insertTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deleted != null">
+        deleted = #{deleted,jdbcType=INTEGER},
+      </if>
+      <if test="param1 != null">
+        param1 = #{param1,jdbcType=VARCHAR},
+      </if>
+      <if test="param2 != null">
+        param2 = #{param2,jdbcType=VARCHAR},
+      </if>
+      <if test="param3 != null">
+        param3 = #{param3,jdbcType=VARCHAR},
+      </if>
+      <if test="param4 != null">
+        param4 = #{param4,jdbcType=VARCHAR},
+      </if>
+      <if test="param5 != null">
+        param5 = #{param5,jdbcType=VARCHAR},
+      </if>
+      <if test="unionid != null">
+        unionid = #{unionid,jdbcType=VARCHAR},
+      </if>
+      <if test="alipayUserId != null">
+        alipay_user_id = #{alipayUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        type = #{type,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiami.po.UserInfo">
+    update tb_user_info
+    set ip_address = #{ipAddress,jdbcType=VARCHAR},
+      edition_number = #{editionNumber,jdbcType=VARCHAR},
+      token = #{token,jdbcType=VARCHAR},
+      user_id = #{userId,jdbcType=INTEGER},
+      lose_time = #{loseTime,jdbcType=TIMESTAMP},
+      insert_time = #{insertTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      deleted = #{deleted,jdbcType=INTEGER},
+      param1 = #{param1,jdbcType=VARCHAR},
+      param2 = #{param2,jdbcType=VARCHAR},
+      param3 = #{param3,jdbcType=VARCHAR},
+      param4 = #{param4,jdbcType=VARCHAR},
+      param5 = #{param5,jdbcType=VARCHAR},
+      unionid = #{unionid,jdbcType=VARCHAR},
+      alipay_user_id = #{alipayUserId,jdbcType=VARCHAR},
+      type = #{type,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
