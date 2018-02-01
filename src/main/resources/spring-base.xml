@@ -20,6 +20,10 @@
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
 
+
+    <!-- 引入spring-data-redis.xml -->
+    <import resource="spring-data-redis.xml"/>
+
     <!-- 加载properties资源文件 -->
     <bean class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer">
         <property name="locations">

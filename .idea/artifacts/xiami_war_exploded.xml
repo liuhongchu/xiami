@@ -44,10 +44,13 @@
           <element id="library" level="project" name="Maven: org.aspectj:aspectjweaver:1.8.9" />
           <element id="library" level="project" name="Maven: com.github.pagehelper:pagehelper:4.1.6" />
           <element id="library" level="project" name="Maven: com.github.jsqlparser:jsqlparser:0.9.5" />
+          <element id="library" level="project" name="Maven: org.springframework.data:spring-data-redis:1.6.0.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-context-support:4.1.7.RELEASE" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.12" />
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/target/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/target/xiami/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="xiami/web/Web" />
     </root>
