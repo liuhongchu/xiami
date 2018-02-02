@@ -1,8 +1,9 @@
 package com.xiami.po;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class UserInfo {
+public class UserInfo implements Serializable{
     private Integer id;
 
     private String ipAddress;
@@ -34,6 +35,30 @@ public class UserInfo {
     private String unionid;
 
     private String alipayUserId;
+
+    public UserInfo() {
+    }
+
+
+    public UserInfo(Integer id, String ipAddress, String editionNumber, String token, Integer userId, Date loseTime, Date insertTime, Date updateTime, Integer deleted, String param1, String param2, String param3, String param4, String param5, String unionid, String alipayUserId, String type) {
+        this.id = id;
+        this.ipAddress = ipAddress;
+        this.editionNumber = editionNumber;
+        this.token = token;
+        this.userId = userId;
+        this.loseTime = loseTime;
+        this.insertTime = insertTime;
+        this.updateTime = updateTime;
+        this.deleted = deleted;
+        this.param1 = param1;
+        this.param2 = param2;
+        this.param3 = param3;
+        this.param4 = param4;
+        this.param5 = param5;
+        this.unionid = unionid;
+        this.alipayUserId = alipayUserId;
+        this.type = type;
+    }
 
     private String type;
 
